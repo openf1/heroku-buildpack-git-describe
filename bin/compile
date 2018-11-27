@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+set -e
+
+BUILD_DIR=$1
+APP_VERSION=$(git describe --match release/* | cut -d "/" -f2)
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/git-describe.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+
+echo "-----> Writing APP_VERSION ($APP_VERSION) to $PROFILE_PATH"
+echo "export APP_VERSION=\"$APP_VERSION\"" >> $PROFILE_PATH
+
+echo "-----> git-describe done"

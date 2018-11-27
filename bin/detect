@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+echo "git-describe" && exit 0
