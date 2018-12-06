@@ -1,5 +1,5 @@
 # heroku-buildpack-git-sha
-Adds `APP_VERSION` env variable for Heroku apps.
+Adds `GIT_SHA` env variable for Heroku apps.
 
 ## Usage
 Simply run
